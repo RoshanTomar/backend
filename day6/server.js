@@ -1,9 +1,10 @@
 
 const app = require('./src/app')
 const mongoose = require("mongoose")
+require("dotenv").config();
 
 function connectToDb(){
-    mongoose.connect("mongodb+srv://roshantomar9713_db_user:LZGKV45yIFKEaThS@cluster0.s8kcy9d.mongodb.net/day6")
+    mongoose.connect(process.env.MONGO_URI)
     .then(()=>{
         console.log("connected to DataBase");
     })
